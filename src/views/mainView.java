@@ -10,8 +10,11 @@ package views;
 
 
 import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+import java.util.Arrays;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import models.NhanVien;
@@ -19,6 +22,9 @@ import models.NhanVien;
 public class mainView extends javax.swing.JFrame {
 
     private CardLayout card = null;
+        private final Color color_hover = new Color(216, 238, 255);
+    private final Color color_active = new Color(187, 222, 251);
+    private final Color default_color = new Color(242, 242, 242);
     NhanVien nhanVien = null;
     /**
      * Creates new form Mainview
@@ -87,6 +93,11 @@ public class mainView extends javax.swing.JFrame {
 //        activeAllFunction();
     }
     
+        private void buttonActive(Component c) {
+        Arrays.stream(new Component[]{lbl_ManHinhChinh, lbl_TaiKhoan, lbl_PhongHat, lbl_TaiLieu, lbl_KhachHang, lbl_DichVu, lbl_NhanVien, lbl_ThongKe}).forEach(item -> item.setBackground(default_color));
+        c.setBackground(color_active);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -122,6 +133,7 @@ public class mainView extends javax.swing.JFrame {
         pnl_TroGiup = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1366, 768));
 
         pnl_Control.setPreferredSize(new java.awt.Dimension(200, 182));
         pnl_Control.setLayout(new javax.swing.BoxLayout(pnl_Control, javax.swing.BoxLayout.Y_AXIS));
@@ -129,8 +141,9 @@ public class mainView extends javax.swing.JFrame {
         lbl_ManHinhChinh.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_ManHinhChinh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utilities/icon/home.png"))); // NOI18N
         lbl_ManHinhChinh.setText("Màn hình chính");
-        lbl_ManHinhChinh.setMaximumSize(new java.awt.Dimension(200, 64));
-        lbl_ManHinhChinh.setPreferredSize(new java.awt.Dimension(200, 64));
+        lbl_ManHinhChinh.setMaximumSize(new java.awt.Dimension(200, 80));
+        lbl_ManHinhChinh.setMinimumSize(new java.awt.Dimension(200, 80));
+        lbl_ManHinhChinh.setPreferredSize(new java.awt.Dimension(200, 80));
         lbl_ManHinhChinh.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_ManHinhChinhMouseClicked(evt);
@@ -141,8 +154,9 @@ public class mainView extends javax.swing.JFrame {
         lbl_TaiKhoan.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_TaiKhoan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utilities/icon/verified-account.png"))); // NOI18N
         lbl_TaiKhoan.setText("Tài khoản");
-        lbl_TaiKhoan.setMaximumSize(new java.awt.Dimension(200, 64));
-        lbl_TaiKhoan.setPreferredSize(new java.awt.Dimension(200, 64));
+        lbl_TaiKhoan.setMaximumSize(new java.awt.Dimension(200, 80));
+        lbl_TaiKhoan.setMinimumSize(new java.awt.Dimension(200, 80));
+        lbl_TaiKhoan.setPreferredSize(new java.awt.Dimension(200, 80));
         lbl_TaiKhoan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_TaiKhoanMouseClicked(evt);
@@ -153,8 +167,9 @@ public class mainView extends javax.swing.JFrame {
         lbl_PhongHat.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_PhongHat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utilities/icon/karaoke.png"))); // NOI18N
         lbl_PhongHat.setText("Phòng hát");
-        lbl_PhongHat.setMaximumSize(new java.awt.Dimension(200, 64));
-        lbl_PhongHat.setPreferredSize(new java.awt.Dimension(200, 64));
+        lbl_PhongHat.setMaximumSize(new java.awt.Dimension(200, 80));
+        lbl_PhongHat.setMinimumSize(new java.awt.Dimension(200, 80));
+        lbl_PhongHat.setPreferredSize(new java.awt.Dimension(200, 80));
         lbl_PhongHat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_PhongHatMouseClicked(evt);
@@ -165,8 +180,9 @@ public class mainView extends javax.swing.JFrame {
         lbl_TaiLieu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_TaiLieu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utilities/icon/documentation.png"))); // NOI18N
         lbl_TaiLieu.setText("Tài liệu giao dịch");
-        lbl_TaiLieu.setMaximumSize(new java.awt.Dimension(200, 64));
-        lbl_TaiLieu.setPreferredSize(new java.awt.Dimension(200, 64));
+        lbl_TaiLieu.setMaximumSize(new java.awt.Dimension(200, 80));
+        lbl_TaiLieu.setMinimumSize(new java.awt.Dimension(200, 80));
+        lbl_TaiLieu.setPreferredSize(new java.awt.Dimension(200, 80));
         lbl_TaiLieu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_TaiLieuMouseClicked(evt);
@@ -177,8 +193,9 @@ public class mainView extends javax.swing.JFrame {
         lbl_KhachHang.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_KhachHang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utilities/icon/management.png"))); // NOI18N
         lbl_KhachHang.setText("Khách hàng");
-        lbl_KhachHang.setMaximumSize(new java.awt.Dimension(200, 64));
-        lbl_KhachHang.setPreferredSize(new java.awt.Dimension(200, 64));
+        lbl_KhachHang.setMaximumSize(new java.awt.Dimension(200, 80));
+        lbl_KhachHang.setMinimumSize(new java.awt.Dimension(200, 80));
+        lbl_KhachHang.setPreferredSize(new java.awt.Dimension(200, 80));
         lbl_KhachHang.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_KhachHangMouseClicked(evt);
@@ -189,8 +206,9 @@ public class mainView extends javax.swing.JFrame {
         lbl_DichVu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_DichVu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utilities/icon/fast-food.png"))); // NOI18N
         lbl_DichVu.setText("Dịch vụ");
-        lbl_DichVu.setMaximumSize(new java.awt.Dimension(200, 64));
-        lbl_DichVu.setPreferredSize(new java.awt.Dimension(200, 64));
+        lbl_DichVu.setMaximumSize(new java.awt.Dimension(200, 80));
+        lbl_DichVu.setMinimumSize(new java.awt.Dimension(200, 80));
+        lbl_DichVu.setPreferredSize(new java.awt.Dimension(200, 80));
         lbl_DichVu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_DichVuMouseClicked(evt);
@@ -201,8 +219,9 @@ public class mainView extends javax.swing.JFrame {
         lbl_NhanVien.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_NhanVien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utilities/icon/user.png"))); // NOI18N
         lbl_NhanVien.setText("Nhân viên");
-        lbl_NhanVien.setMaximumSize(new java.awt.Dimension(200, 64));
-        lbl_NhanVien.setPreferredSize(new java.awt.Dimension(200, 64));
+        lbl_NhanVien.setMaximumSize(new java.awt.Dimension(200, 80));
+        lbl_NhanVien.setMinimumSize(new java.awt.Dimension(200, 80));
+        lbl_NhanVien.setPreferredSize(new java.awt.Dimension(200, 80));
         lbl_NhanVien.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_NhanVienMouseClicked(evt);
@@ -213,8 +232,9 @@ public class mainView extends javax.swing.JFrame {
         lbl_ThongKe.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_ThongKe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utilities/icon/description.png"))); // NOI18N
         lbl_ThongKe.setText("Thống kê");
-        lbl_ThongKe.setMaximumSize(new java.awt.Dimension(200, 64));
-        lbl_ThongKe.setPreferredSize(new java.awt.Dimension(200, 64));
+        lbl_ThongKe.setMaximumSize(new java.awt.Dimension(200, 80));
+        lbl_ThongKe.setMinimumSize(new java.awt.Dimension(200, 80));
+        lbl_ThongKe.setPreferredSize(new java.awt.Dimension(200, 80));
         lbl_ThongKe.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_ThongKeMouseClicked(evt);
@@ -225,8 +245,9 @@ public class mainView extends javax.swing.JFrame {
         lbl_TroGiup.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_TroGiup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utilities/icon/question.png"))); // NOI18N
         lbl_TroGiup.setText("Trợ giúp");
-        lbl_TroGiup.setMaximumSize(new java.awt.Dimension(200, 64));
-        lbl_TroGiup.setPreferredSize(new java.awt.Dimension(200, 64));
+        lbl_TroGiup.setMaximumSize(new java.awt.Dimension(200, 80));
+        lbl_TroGiup.setMinimumSize(new java.awt.Dimension(200, 80));
+        lbl_TroGiup.setPreferredSize(new java.awt.Dimension(200, 80));
         pnl_Control.add(lbl_TroGiup);
 
         pnl_Main.setLayout(new java.awt.CardLayout());
@@ -282,7 +303,7 @@ public class mainView extends javax.swing.JFrame {
         );
         pnl_TaiKhoanLayout.setVerticalGroup(
             pnl_TaiKhoanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 576, Short.MAX_VALUE)
+            .addGap(0, 720, Short.MAX_VALUE)
         );
 
         pnl_Main.add(pnl_TaiKhoan, "card2");
@@ -295,7 +316,7 @@ public class mainView extends javax.swing.JFrame {
         );
         pnl_PhongHatLayout.setVerticalGroup(
             pnl_PhongHatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 576, Short.MAX_VALUE)
+            .addGap(0, 720, Short.MAX_VALUE)
         );
 
         pnl_Main.add(pnl_PhongHat, "card3");
@@ -308,7 +329,7 @@ public class mainView extends javax.swing.JFrame {
         );
         pnl_TaiLieuLayout.setVerticalGroup(
             pnl_TaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 576, Short.MAX_VALUE)
+            .addGap(0, 720, Short.MAX_VALUE)
         );
 
         pnl_Main.add(pnl_TaiLieu, "card4");
@@ -321,7 +342,7 @@ public class mainView extends javax.swing.JFrame {
         );
         pnl_KhachHangLayout.setVerticalGroup(
             pnl_KhachHangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 576, Short.MAX_VALUE)
+            .addGap(0, 720, Short.MAX_VALUE)
         );
 
         pnl_Main.add(pnl_KhachHang, "card5");
@@ -334,7 +355,7 @@ public class mainView extends javax.swing.JFrame {
         );
         pnl_DichVuLayout.setVerticalGroup(
             pnl_DichVuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 576, Short.MAX_VALUE)
+            .addGap(0, 720, Short.MAX_VALUE)
         );
 
         pnl_Main.add(pnl_DichVu, "card6");
@@ -360,7 +381,7 @@ public class mainView extends javax.swing.JFrame {
         );
         pnl_ThongKeLayout.setVerticalGroup(
             pnl_ThongKeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 576, Short.MAX_VALUE)
+            .addGap(0, 720, Short.MAX_VALUE)
         );
 
         pnl_Main.add(pnl_ThongKe, "card8");
@@ -384,7 +405,7 @@ public class mainView extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(pnl_Control, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(pnl_Main, javax.swing.GroupLayout.PREFERRED_SIZE, 891, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -406,7 +427,7 @@ public class mainView extends javax.swing.JFrame {
         pnl_PhongHat = new panel_QuanLyPhong();
         pnl_Main.add(this.pnl_PhongHat, "phong");
         card.show(this.pnl_Main, "phong");
-//        buttonActive(evt.getComponent());
+        buttonActive(evt.getComponent());
     }//GEN-LAST:event_lbl_PhongHatMouseClicked
 
     private void lbl_TaiKhoanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_TaiKhoanMouseClicked
@@ -414,7 +435,7 @@ public class mainView extends javax.swing.JFrame {
         pnl_TaiKhoan = new panel_QuanLyTaiKhoan();
         pnl_Main.add(this.pnl_TaiKhoan, "taikhoan");
         card.show(this.pnl_Main, "taikhoan");
-//        buttonActive(evt.getComponent());
+        buttonActive(evt.getComponent());
     }//GEN-LAST:event_lbl_TaiKhoanMouseClicked
 
     private void lbl_ManHinhChinhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_ManHinhChinhMouseClicked
